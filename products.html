@@ -10,6 +10,7 @@
       font-family: 'Cairo', sans-serif;
       background-color: #f9f9f9;
       color: #222;
+      line-height: 1.6;
     }
     header {
       background-color: #0a2540;
@@ -27,6 +28,7 @@
       text-decoration: none;
       margin: 0 10px;
       font-weight: bold;
+      font-size: 16px;
     }
     nav a:hover {
       text-decoration: underline;
@@ -35,6 +37,7 @@
       text-align: center;
       margin: 30px 0;
       color: #0a2540;
+      font-size: 26px;
     }
     .products {
       display: grid;
@@ -49,6 +52,7 @@
       text-align: center;
       transition: transform 0.3s;
       overflow: hidden;
+      padding-bottom: 10px;
     }
     .product:hover {
       transform: translateY(-5px);
@@ -57,22 +61,28 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
+      display: block;
     }
     .product h3 {
-      margin: 10px 0;
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #0a2540;
     }
     .product p {
-      color: #555;
+      color: #444;
+      margin: 0 10px 10px;
+      font-size: 15px;
     }
     .buy-btn {
       background-color: #0a2540;
       color: white;
       border: none;
       padding: 10px 20px;
-      margin: 10px 0 20px;
+      margin: 10px auto 20px;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 15px;
     }
     .buy-btn:hover {
       background-color: #183b66;
@@ -80,4 +90,60 @@
     footer {
       background-color: #0a2540;
       color: white;
-      
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="file_000000007e746243b707e807e6a530a1.png" alt="تمارا ستور">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="#">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <h1>منتجاتنا</h1>
+
+  <section class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1616627454279-3e2e4a7cb38c?auto=format&fit=crop&w=800&q=80" alt="لابتوب">
+      <h3>لابتوب احترافي</h3>
+      <p>سرعة وأداء فائق لتجربة مذهلة.</p>
+      <button class="buy-btn">أضف للسلة 🛒</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1612815154858-60aa4c3d49c7?auto=format&fit=crop&w=800&q=80" alt="سماعات">
+      <h3>سماعات بلوتوث</h3>
+      <p>صوت نقي بدون أي أسلاك.</p>
+      <button class="buy-btn">أضف للسلة 🛒</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1587574293340-e0011c975ba4?auto=format&fit=crop&w=800&q=80" alt="هاتف ذكي">
+      <h3>هاتف ذكي</h3>
+      <p>أحدث المواصفات لعام 2025.</p>
+      <button class="buy-btn">أضف للسلة 🛒</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1603787081207-362b0a2f56b0?auto=format&fit=crop&w=800&q=80" alt="كاميرا رقمية">
+      <h3>كاميرا رقمية</h3>
+      <p>صور بجودة عالية لكل لحظاتك الجميلة.</p>
+      <button class="buy-btn">أضف للسلة 🛒</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0644?auto=format&fit=crop&w=800&q=80" alt="تابلت">
+      <h3>تابلت للأعمال والدراسة</h3>
+      <p>خفيف وسريع، مناسب للعمل أو الدراسة.</p>
+      <button class="buy-btn">أضف للسلة 🛒</button>
+    </div>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © 2025 تمارا ستور
+  </footer>
+</body>
+</html>
