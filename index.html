@@ -5,76 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تمارا ستور - الإلكترونيات</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
     body {
-      font-family: 'Tahoma', sans-serif;
+      font-family: 'Cairo', sans-serif;
       margin: 0;
-      background-color: #f5f5f5;
-      color: #222;
+      background: linear-gradient(180deg, #0d0d0d, #121212);
+      color: #eee;
     }
+
     header {
-      background-color: #0a84ff;
+      background: #0a84ff;
       color: white;
       text-align: center;
-      padding: 15px 0;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
+
     header img {
-      width: 120px;
+      width: 100px;
       vertical-align: middle;
+      border-radius: 10px;
     }
+
     header h1 {
       display: inline-block;
-      margin: 0;
+      margin: 0 10px;
       font-size: 28px;
       vertical-align: middle;
     }
+
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 20px;
+      padding: 30px 10px;
     }
+
     .product {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      width: 200px;
+      background: #1a1a1a;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      width: 220px;
       margin: 15px;
       text-align: center;
-      padding: 15px;
-      transition: transform 0.3s;
+      padding: 20px;
+      transition: transform 0.4s, box-shadow 0.4s;
     }
+
     .product:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(10,132,255,0.4);
     }
+
     .product img {
       width: 100%;
       border-radius: 10px;
+      transition: transform 0.3s;
     }
+
+    .product img:hover {
+      transform: scale(1.05);
+    }
+
     .product h3 {
-      margin: 10px 0 5px;
-      font-size: 18px;
+      margin: 15px 0 5px;
+      font-size: 20px;
+      color: #0a84ff;
     }
+
     .product p {
-      color: #555;
+      color: #ccc;
+      margin-bottom: 10px;
     }
+
     .btn {
       background-color: #0a84ff;
       color: white;
-      padding: 8px 15px;
+      padding: 10px 20px;
       border: none;
-      border-radius: 6px;
+      border-radius: 25px;
       cursor: pointer;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
     }
+
     .btn:hover {
-      background-color: #005ecb;
+      background-color: #0072e0;
+      transform: scale(1.05);
     }
+
     footer {
       background: #0a84ff;
       color: white;
       text-align: center;
-      padding: 10px;
-      margin-top: 30px;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      .product {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -92,25 +126,3 @@
       <p>سعر: ١٥٬٠٠٠ جنيه</p>
       <button class="btn">اشترِ الآن</button>
     </div>
-
-    <div class="product">
-      <img src="https://cdn.pixabay.com/photo/2017/01/22/19/20/smartphone-2009940_1280.jpg" alt="Smartphone">
-      <h3>هاتف حديث</h3>
-      <p>سعر: ٨٬٠٠٠ جنيه</p>
-      <button class="btn">اشترِ الآن</button>
-    </div>
-
-    <div class="product">
-      <img src="https://cdn.pixabay.com/photo/2016/03/31/20/11/virtual-reality-1294031_1280.png" alt="VR Glasses">
-      <h3>نظارة VR</h3>
-      <p>سعر: ٢٬٥٠٠ جنيه</p>
-      <button class="btn">اشترِ الآن</button>
-    </div>
-  </section>
-
-  <footer>
-    جميع الحقوق محفوظة © ٢٠٢٥ تمارا ستور
-  </footer>
-
-</body>
-</html>
