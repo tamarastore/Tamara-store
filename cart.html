@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سلة المشتريات - تمارا ستور</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0a0f1e, #1a2a40);
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0a2540;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    header img {
+      height: 45px;
+      border-radius: 8px;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 700;
+    }
+    h1 {
+      margin-top: 25px;
+      color: #00e5ff;
+    }
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    th {
+      background: rgba(255,255,255,0.1);
+      color: #00e5ff;
+    }
+    tr:last-child td {
+      border: none;
+    }
+    .total {
+      font-size: 1.2em;
+      color: #00bcd4;
+      font-weight: bold;
+    }
+    .checkout-btn {
+      background: #00bcd4;
+      color: #042;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .checkout-btn:hover {
+      background: #00e5ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="file_000000007e746243b707e807e6a530a1.png" alt="تمارا ستور">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="cart.html">سلة المشتريات</a>
+    </nav>
+  </header>
+
+  <h1>🛒 سلة المشتريات</h1>
+
+  <table>
+    <tr>
+      <th>المنتج</th>
+      <th>السعر</th>
+      <th>الكمية</th>
+      <th>الإجمالي</th>
+    </tr>
+    <tr>
+      <td>لابتوب تمارا برو</td>
+      <td>25000 جنيه</td>
+      <td>1</td>
+      <td>25000 جنيه</td>
+    </tr>
+    <tr>
+      <td>سماعات تمارا بودز</td>
+      <td>3000 جنيه</td>
+      <td>2</td>
+      <td>6000 جنيه</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="total">الإجمالي الكلي</td>
+      <td class="total">31000 جنيه</td>
+    </tr>
+  </table>
+
+  <button class="checkout-btn">إتمام الشراء ✅</button>
+
+</body>
+</html>
