@@ -3,95 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تمارا ستور | Tamara Store</title>
+  <title>تمارا ستور</title>
   <style>
     body {
+      font-family: "Cairo", sans-serif;
       margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
+      background: #f4f4f4;
     }
 
     header {
-      background-color: #0a2540;
+      background: #ff0066;
       color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-    }
-
-    header img {
-      height: 50px;
+      padding: 15px;
+      text-align: center;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 10px;
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     .hero {
-      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80') center/cover;
-      height: 350px;
+      background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1500&q=80') center/cover;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      text-shadow: 0 0 10px #000;
-      font-size: 2rem;
-      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 30px;
+      padding: 20px;
     }
 
     .product {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
+      padding: 15px;
     }
 
     .product img {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      border-radius: 12px;
     }
 
     .product h3 {
-      margin: 10px 0;
-      font-size: 1.1rem;
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .product button {
+      background: #ff0066;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .product button:hover {
+      background: #e6005c;
+    }
+
+    /* 🛒 تصميم السلة */
+    #cart {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 260px;
+      max-height: 320px;
+      overflow-y: auto;
+      font-family: "Cairo", sans-serif;
+    }
+
+    #cart h3 {
+      margin-top: 0;
+      text-align: center;
+      color: #ff0066;
+    }
+
+    #cart ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #cart li {
+      border-bottom: 1px solid #ddd;
+      padding: 5px 0;
+    }
+
+    #cart button {
+      background: crimson;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    #cart button:hover {
+      background: darkred;
     }
 
     footer {
-      background-color: #0a2540;
-      color: white;
       text-align: center;
       padding: 15px;
+      background: #ff0066;
+      color: white;
       margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="file_000000007e746243b707e807e6a530a1.png" alt="تمارا ستور">
+    <h1>تمارا ستور 🌸</h1>
     <nav>
       <a href="#">الرئيسية</a>
       <a href="#">المنتجات</a>
@@ -100,37 +149,71 @@
   </header>
 
   <section class="hero">
-    <div>أفضل الإلكترونيات بأفضل الأسعار ⚡</div>
+    أفضل الإلكترونيات بأفضل الأسعار ⚡
   </section>
 
   <section class="products">
     <div class="product">
       <img src="https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=800&q=80" alt="لابتوب">
       <h3>لابتوب احترافي</h3>
-      <p>أداء قوي وسرعة مذهلة</p>
+      <p>أداء قوي وسرعة مذهلة 💻</p>
+      <p><strong>السعر: 15000 جنيه</strong></p>
+      <button onclick="addToCart('لابتوب احترافي', 15000)">🛒 أضف للسلة</button>
     </div>
 
     <div class="product">
       <img src="https://images.unsplash.com/photo-1581291519195-ef11498d1cf5?auto=format&fit=crop&w=800&q=80" alt="سماعات">
       <h3>سماعات لاسلكية</h3>
       <p>جودة صوت خرافية 🔊</p>
+      <p><strong>السعر: 800 جنيه</strong></p>
+      <button onclick="addToCart('سماعات لاسلكية', 800)">🛒 أضف للسلة</button>
     </div>
 
     <div class="product">
       <img src="https://images.unsplash.com/photo-1606813907299-5a19f3b0d0d6?auto=format&fit=crop&w=800&q=80" alt="كاميرا">
       <h3>كاميرا رقمية</h3>
       <p>صور أوضح وتفاصيل أدق 📸</p>
+      <p><strong>السعر: 5000 جنيه</strong></p>
+      <button onclick="addToCart('كاميرا رقمية', 5000)">🛒 أضف للسلة</button>
     </div>
   </section>
 
   <footer>
     جميع الحقوق محفوظة © 2025 تمارا ستور
-    <!-- كود السلة هنا -->
-<div id="cart-popup" class="cart-popup">...</div>
+  </footer>
 
-<script>...</script>
+  <!-- 🛒 كود السلة -->
+  <div id="cart">
+    <h3>🛍️ سلة المنتجات</h3>
+    <ul id="cart-items"></ul>
+    <p>عدد المنتجات: <span id="cart-count">0</span></p>
+    <p>الإجمالي: <span id="cart-total">0</span> جنيه</p>
+    <button id="clear-cart">إفراغ السلة</button>
+  </div>
+
+  <script>
+    let cart = [];
+    const cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    const clearCart = document.getElementById('clear-cart');
+
+    function addToCart(itemName, price) {
+      cart.push({ name: itemName, price: price });
+      updateCart();
+    }
+
+    function updateCart() {
+      cartCount.textContent = cart.length;
+      cartItems.innerHTML = cart.map(item => `<li>${item.name} - ${item.price} جنيه</li>`).join("");
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      cartTotal.textContent = total;
+    }
+
+    clearCart.onclick = () => {
+      cart = [];
+      updateCart();
+    };
+  </script>
 </body>
 </html>
-
-
-
