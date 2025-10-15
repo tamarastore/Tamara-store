@@ -1,102 +1,252 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>منتجات تمارا ستور</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تمارا ستور</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-    html,body{height:100%;margin:0}
-    body{
-      font-family:'Cairo',sans-serif;
-      background: linear-gradient(135deg,#0a0f1e,#1a2a40);
-      color:#fff;
-      -webkit-font-smoothing:antialiased;
-      padding:20px;
-      box-sizing:border-box;
+    body {
+      font-family: "Cairo", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
     }
-    .site-header{
-      display:flex;align-items:center;justify-content:space-between;
-      background:#0a2540;padding:12px 18px;border-radius:8px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+
+    header {
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
     }
-    .site-header img{height:48px;border-radius:8px}
-    .site-header nav a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700}
-    h1{color:#00e5ff;text-align:center;margin:28px 0 10px;font-size:1.8rem}
-    .products{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:18px;
-      max-width:1200px;margin:0 auto;
+
+    header img {
+      width: 120px;
     }
-    .product{
-      background:rgba(255,255,255,0.06);
-      border-radius:12px;padding:12px;overflow:hidden;
-      box-shadow:0 6px 18px rgba(0,0,0,0.4);
-      transition:transform .28s,box-shadow .28s;
-      text-align:center;
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
     }
-    .product:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
-    .product img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-    .product h3{color:#00e5ff;margin:12px 0 6px;font-size:1.05rem}
-    .product p{color:#dfefff;margin:0 10px 12px;font-size:0.95rem}
-    .buy-btn{display:inline-block;background:#00bcd4;color:#042; padding:10px 18px;border-radius:999px;border:none;cursor:pointer;font-weight:700}
-    footer{margin-top:28px;text-align:center;color:#cceefb;opacity:.9}
-    @media(max-width:520px){ .site-header{flex-direction:column;gap:8px} .product img{height:180px} }
+
+    .hero {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #eee;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .product button:hover {
+      background-color: #c2185b;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* السلة */
+    .cart-icon {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .cart-popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 250px;
+    }
+
+    .cart-popup h3 {
+      margin-top: 0;
+    }
+
+    .cart-popup ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cart-popup li {
+      padding: 5px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-popup button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <header class="site-header">
+
+  <header>
     <img src="file_000000007e746243b707e807e6a530a1.png" alt="تمارا ستور">
     <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="products.html">المنتجات</a>
+      <a href="#">الرئيسية</a>
+      <a href="#">المنتجات</a>
       <a href="#">تواصل معنا</a>
     </nav>
   </header>
 
-  <main>
-    <h1>منتجات تمارا ستور</h1>
-    <section class="products">
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1616627454279-3e2e4a7cb38c?auto=format&fit=crop&w=800&q=80" alt="Laptop">
-        <h3>لابتوب تمارا برو</h3>
-        <p>أداء قوي، شاشة ممتازة، وخصائص مميزة للمحترفين.</p>
-        <button class="buy-btn">أضف للسلة 🛒</button>
-      </article>
+  <section class="hero">
+    أفضل الإلكترونيات بأفضل الأسعار ⚡
+  </section>
 
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1612815154858-60aa4c3d49c7?auto=format&fit=crop&w=800&q=80" alt="Headphones">
-        <h3>سماعات تمارا بودز</h3>
-        <p>نقاء صوتي وعزل ضوضاء متقدم لساعات استماع طويلة.</p>
-        <button class="buy-btn">أضف للسلة 🛒</button>
-      </article>
+  <section class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=800&q=80" alt="لابتوب">
+      <h3>لابتوب احترافي</h3>
+      <p>أداء قوي وسرعة مذهلة</p>
+      <button onclick="addToCart('لابتوب احترافي')">أضف إلى السلة 🛒</button>
+    </div>
 
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1587574293340-e0011c975ba4?auto=format&fit=crop&w=800&q=80" alt="Phone">
-        <h3>هاتف ذكي تمارا X</h3>
-        <p>كاميرات عالية الجودة وبطارية تدوم طوال اليوم.</p>
-        <button class="buy-btn">أضف للسلة 🛒</button>
-      </article>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1581291519195-ef11498d1cf5?auto=format&fit=crop&w=800&q=80" alt="سماعات">
+      <h3>سماعات لاسلكية</h3>
+      <p>جودة صوت خرافية 🔊</p>
+      <button onclick="addToCart('سماعات لاسلكية')">أضف إلى السلة 🛒</button>
+    </div>
 
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1603787081207-362b0a2f56b0?auto=format&fit=crop&w=800&q=80" alt="Camera">
-        <h3>كاميرا تمارا</h3>
-        <p>التقط لحظاتك بأفضل دقة ووضوح.</p>
-        <button class="buy-btn">أضف للسلة 🛒</button>
-      </article>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1606813907299-5a19f3b0d0d6?auto=format&fit=crop&w=800&q=80" alt="كاميرا">
+      <h3>كاميرا رقمية</h3>
+      <p>صور أوضح وتفاصيل أدق 📸</p>
+      <button onclick="addToCart('كاميرا رقمية')">أضف إلى السلة 🛒</button>
+    </div>
 
-      <article class="product">
-        <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0644?auto=format&fit=crop&w=800&q=80" alt="Tablet">
-        <h3>تابلت تمارا</h3>
-        <p>خفيف وقوي للاستخدام اليومي والعمل والدراسة.</p>
-        <button class="buy-btn">أضف للسلة 🛒</button>
-      </article>
-    </section>
-  </main>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1581276879432-15a19d654956?auto=format&fit=crop&w=800&q=80" alt="تلفاز ذكي">
+      <h3>تلفاز ذكي</h3>
+      <p>شاشة 4K وتقنيات حديثة</p>
+      <button onclick="addToCart('تلفاز ذكي')">أضف إلى السلة 🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1600180758890-6f3b5bbf8b2b?auto=format&fit=crop&w=800&q=80" alt="تابلت">
+      <h3>تابلت جديد</h3>
+      <p>خفيف وسهل الاستخدام</p>
+      <button onclick="addToCart('تابلت جديد')">أضف إلى السلة 🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="ماوس احترافي">
+      <h3>ماوس احترافي</h3>
+      <p>تحكم دقيق وسرعة عالية</p>
+      <button onclick="addToCart('ماوس احترافي')">أضف إلى السلة 🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1512499617640-c2f999098b88?auto=format&fit=crop&w=800&q=80" alt="كيبورد ميكانيكي">
+      <h3>كيبورد ميكانيكي</h3>
+      <p>راحة كتابة وأداء مثالي</p>
+      <button onclick="addToCart('كيبورد ميكانيكي')">أضف إلى السلة 🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1606814154789-70fef07b8a5a?auto=format&fit=crop&w=800&q=80" alt="سماعة رأس للألعاب">
+      <h3>سماعة رأس للألعاب</h3>
+      <p>تجربة غامرة وصوت محيطي</p>
+      <button onclick="addToCart('سماعة رأس للألعاب')">أضف إلى السلة 🛒</button>
+    </div>
+  </section>
+
+  <div class="cart-icon" onclick="toggleCart()">🛒</div>
+
+  <div id="cart-popup" class="cart-popup">
+    <h3>سلة المشتريات</h3>
+    <ul id="cart-items"></ul>
+    <button id="clear-cart">تفريغ السلة</button>
+  </div>
 
   <footer>
     جميع الحقوق محفوظة © 2025 تمارا ستور
   </footer>
+
+  <script>
+    let cart = [];
+    const cartPopup = document.getElementById("cart-popup");
+    const cartItems = document.getElementById("cart-items");
+    const clearCart = document.getElementById("clear-cart");
+
+    function toggleCart() {
+      cartPopup.style.display = cartPopup.style.display === "block" ? "none" : "block";
+    }
+
+    function addToCart(itemName) {
+      cart.push(itemName);
+      updateCart();
+    }
+
+    function updateCart() {
+      cartItems.innerHTML = cart.map(item => `<li>${item}</li>`).join("");
+    }
+
+    clearCart.onclick = () => {
+      cart = [];
+      updateCart();
+    };
+  </script>
+
 </body>
 </html>
