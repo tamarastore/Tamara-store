@@ -127,5 +127,62 @@
     <button class="checkout-btn">إتمام الشراء</button>
   </div>
 </div>
+  <script>
+  const cartPopup = document.getElementById("cart-popup");
+  const closeBtn = document.querySelector(".close-btn");
+  const checkoutBtn = document.querySelector(".checkout-btn");
+  const cartItemsContainer = document.getElementById("cart-items");
+
+  let cart = [];
+
+  // زرار لفتح السلة (هنضيفه بعدين فوق)
+  function openCart() {
+    cartPopup.style.display = "flex";
+    updateCartDisplay();
+  }
+
+  // إغلاق السلة
+  closeBtn.addEventListener("click", () => {
+    cartPopup.style.display = "none";
+  });
+
+  // تحديث محتوى السلة
+  function updateCartDisplay() {
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = "<p>السلة فارغة حالياً 😅</p>";
+    } else {
+      cartItemsContainer.innerHTML = cart
+        .map(
+          (item, index) => `
+          <div class="cart-item">
+            <span>${item.name}</span>
+            <span>${item.price} ج.م</span>
+            <button onclick="removeFromCart(${index})">❌</button>
+          </div>`
+        )
+        .join("");
+    }
+  }
+
+  // إضافة منتج للسلة
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartDisplay();
+    openCart();
+  }
+
+  // حذف منتج من السلة
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartDisplay();
+  }
+
+  // زرار "إتمام الشراء"
+  checkoutBtn.addEventListener("click", () => {
+    alert("🚀 شكراً لطلبك! سنتواصل معك قريباً لإتمام الشراء ❤️");
+    cart = [];
+    updateCartDisplay();
+  });
+  </script>
 </body>
 </html>
