@@ -1,109 +1,39 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>اتصل بنا | تمارا ستور</title>
-  <style>
-    body {
-      font-family: "Cairo", sans-serif;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 15px 0;
-      font-size: 1.2rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 80px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-      animation: fadeInUp 1.2s ease-in-out;
-    }
-
-    h1 {
-      margin-bottom: 15px;
-      font-size: 2rem;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      animation: fadeIn 2.5s ease-in-out;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      outline: none;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #e63946;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #ff4d6d;
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا - تمارا ستور</title>
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-  <header>✨ تمارا ستور | اتصل بنا ✨</header>
 
-  <div class="container">
-    <h1>تواصل معنا</h1>
-    <p>نسعد دائمًا بسماع آرائكم واستفساراتكم 💬</p>
-    <form>
-      <input type="text" placeholder="الاسم الكامل" required />
-      <input type="email" placeholder="البريد الإلكتروني" required />
-      <textarea rows="4" placeholder="رسالتك..." required></textarea>
+  <header class="contact-header">
+    <h1>اتصل بنا</h1>
+    <p>يسعدنا تواصلك معنا في أي وقت 💬</p>
+  </header>
+
+  <section class="contact-container">
+    <form class="contact-form">
+      <label>الاسم الكامل:</label>
+      <input type="text" placeholder="اكتب اسمك هنا" required>
+
+      <label>البريد الإلكتروني:</label>
+      <input type="email" placeholder="example@email.com" required>
+
+      <label>الرسالة:</label>
+      <textarea placeholder="اكتب رسالتك هنا..." rows="5" required></textarea>
+
       <button type="submit">إرسال</button>
     </form>
-  </div>
+
+    <div class="contact-info">
+      <h3>معلومات التواصل</h3>
+      <p>📞 0100 123 4567</p>
+      <p>📧 support@tamara-store.com</p>
+      <p>📍 القاهرة، مصر</p>
+    </div>
+  </section>
+
 </body>
 </html>
