@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا - تمارا ستور</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0a1f44, #102a68);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    .contact-section {
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    button {
+      background: #00c3ff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0096cc;
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    a {
+      color: #00c3ff;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(40px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="file_000000007e746243b707e807e6a530a1.png" alt="شعار تمارا ستور">
+  </header>
+
+  <section class="contact-section">
+    <h1>اتصل بنا</h1>
+    <p>نحن سعداء بسماع آرائك أو استفساراتك 😊</p>
+
+    <form onsubmit="event.preventDefault(); alert('✅ تم إرسال الرسالة بنجاح!');">
+      <input type="text" placeholder="الاسم" required>
+      <input type="email" placeholder="البريد الإلكتروني" required>
+      <textarea placeholder="اكتب رسالتك هنا..." required></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+
+    <br>
+    <a href="index.html">⬅ العودة إلى الرئيسية</a>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © 2025 تمارا ستور
+  </footer>
+
+</body>
+</html>
