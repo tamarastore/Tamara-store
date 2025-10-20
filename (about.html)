@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن - تمارا ستور</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      background: linear-gradient(135deg, #001f3f, #003366);
+      color: white;
+      text-align: center;
+    }
 
+    header {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #00bcd4;
+    }
+
+    .about {
+      padding: 60px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .about h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h1>من نحن</h1>
+    <p>تمارا ستور للإلكترونيات متجر متخصص في تقديم أحدث الأجهزة الإلكترونية بأفضل الأسعار وجودة عالية لخدمة كل احتياجاتك التقنية.</p>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © 2025 تمارا ستور للإلكترونيات
+  </footer>
+
+</body>
+</html>
